@@ -1,21 +1,59 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "plugin:prettier/react",
-    "plugin:prettier/@typescript-eslint"
-  ],
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "prettier"
-  ],
-  "rules": {
-    "react/react-in-jsx-scope": "off"
+  "env": {
+    "node": true
   },
-  "globals": {
-    "React": "writable"
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "import/default": 0,
+    "import/export": 0,
+    "import/no-anonymous-default-export": 0,
+    "import/no-named-as-default": 0,
+    "import/no-named-as-default-member": 0,
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+
+    "no-duplicate-imports": "error",
+
+    "react/jsx-sort-props": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/self-closing-comp": ["error", { "component": true }]
+  },
+  "globals": { "React": "writable" },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }

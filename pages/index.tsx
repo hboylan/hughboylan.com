@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import Date from '../components/date'
 import { GetStaticProps } from 'next'
+import Head from 'next/head'
+import Link from 'next/link'
+import ISODate from 'components/date'
+import Layout, { siteTitle } from 'components/layout'
+import { getSortedPostsData } from 'lib/posts'
+import utilStyles from 'styles/utils.module.css'
 
 export default function Home({
   allPostsData,
@@ -37,7 +37,7 @@ export default function Home({
               </Link>
               <br />
               <small className={utilStyles.lightText}>
-                <Date dateString={date} />
+                <ISODate dateString={date} />
               </small>
             </li>
           ))}

@@ -1,15 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import utilStyles from 'styles/utils.module.css'
+import styles from './layout.module.css'
 
-const name = '[Your Name]'
-export const siteTitle = 'Next.js Sample Website'
+const name = 'Hugh Boylan'
+export const siteTitle = 'Hugh Boylan'
 
 export default function Layout({
   children,
-  home
+  home,
 }: {
   children: React.ReactNode
   home?: boolean
@@ -17,30 +17,30 @@ export default function Layout({
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link href="/favicon.ico" rel="icon" />
         <meta
-          name="description"
           content="Learn how to build a personal website using Next.js"
+          name="description"
         />
         <meta
-          property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
+            siteTitle,
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+          property="og:image"
         />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta content={siteTitle} name="og:title" />
+        <meta content="summary_large_image" name="twitter:card" />
       </Head>
       <header className={styles.header}>
         {home ? (
           <>
             <Image
-              priority
-              src="/images/profile.jpg"
+              alt={name}
               className={utilStyles.borderCircle}
               height={144}
+              priority
+              src="/images/profile.jpg"
               width={144}
-              alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
@@ -49,12 +49,12 @@ export default function Layout({
             <Link href="/">
               <a>
                 <Image
-                  priority
-                  src="/images/profile.jpg"
+                  alt={name}
                   className={utilStyles.borderCircle}
                   height={108}
+                  priority
+                  src="/images/profile.jpg"
                   width={108}
-                  alt={name}
                 />
               </a>
             </Link>
