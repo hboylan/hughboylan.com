@@ -25,10 +25,6 @@
   line-height: 1.5;
 }
 
-.headingMd > p {
-  text-align: center;
-}
-
 .borderCircle {
   border-radius: 9999px;
 }

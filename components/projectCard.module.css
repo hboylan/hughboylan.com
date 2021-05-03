@@ -1,0 +1,38 @@
+.projectCard {
+  background-color: white;
+  border: 1px solid #bababa;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  transition-property: box-shadow transform;
+}
+
+@media (hover: hover) {
+  .projectCard:hover {
+    box-shadow: 0 0 0.75rem rgba(33, 33, 33, 0.2);
+    transform: scale(1.02, 1.02);
+  }
+}
+
+.projectCard > a {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard img {
+  background-size: contain;
+  width: 100%;
+}
+
+.projectContent {
+  padding: 1rem;
+}
+
+.headingProject {
+  margin: 0.5rem 0;
+}
+
+.headingCompany {
+  color: #bababa;
+  margin: 0;
+}

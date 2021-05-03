@@ -14,9 +14,10 @@ export default function Layout({ children }) {
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <meta name="description" content="Software Engineer, Dad, etc." />
+          <meta name="description" content="Software engineer" />
           <meta property="og:image" content={`/images/profile.jpg`} />
           <meta name="og:title" content={name} />
+          <title>Hugh Boylan | Software Engineer</title>
         </Head>
         <header className={styles.header}>
           {isHome ? (
