@@ -61,7 +61,7 @@ export default function Home() {
       <div className={styles.sectionContainer}>
         <section className={utilStyles.headingMd}>
           <ul className={utilStyles.list + ' ' + styles.projects}>
-            {projects.map((project) => (
+            {projects.map(project => (
               <ProjectCard key={project.name} {...project} />
             ))}
           </ul>
