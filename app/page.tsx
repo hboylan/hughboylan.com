@@ -1,6 +1,4 @@
 import { ProjectCard, type ProjectCardProps } from '../components/projectCard'
-import styles from '../styles/Home.module.css'
-import utilStyles from '../styles/utils.module.css'
 
 export const projects: ProjectCardProps[] = [
   {
@@ -50,16 +48,16 @@ export const projects: ProjectCardProps[] = [
 export default function Home() {
   return (
     <>
-      <section className={`${utilStyles.headingMd} ${styles.sectionContainer}`}>
-        <p className={styles.intro}>
+      <section className="text-xl leading-normal mb-8">
+        <p className="text-center m-auto max-w-sm">
           Hi, I'm a software engineer with 10+ years of experience working on
           unique and interesting apps.
         </p>
       </section>
 
-      <div className={styles.sectionContainer}>
-        <section className={utilStyles.headingMd}>
-          <ul className={`${utilStyles.list} ${styles.projects}`}>
+      <div className="mb-8">
+        <section className="text-xl leading-normal">
+          <ul className="list-none p-0 m-0 grid gap-10 grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] md:grid-cols-[repeat(auto-fill,minmax(14rem,1fr))]">
             {projects.map((project) => (
               <ProjectCard key={project.name} {...project} />
             ))}

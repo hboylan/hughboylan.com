@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import type React from 'react'
-import { toKebabCase } from '../scripts/case'
-import utilStyles from '../styles/utils.module.css'
-import styles from './projectCard.module.css'
+import { toKebabCase } from '../utils/case'
 
 export interface ProjectCardProps {
   company: string
@@ -17,14 +15,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   imageUrl,
 }) => (
-  <li className={styles.projectCard}>
-    <Link href={`/projects/${toKebabCase(name)}`}>
-      <img alt={name} src={imageUrl} />
-      <div className={styles.projectContent}>
-        <h4 className={`${utilStyles.headingLg} ${styles.headingProject}`}>
+  <li className="bg-white rounded-xl overflow-hidden transition-all duration-300 shadow-md border border-black/5 hover:shadow-2xl hover:-translate-y-1">
+    <Link href={`/projects/${toKebabCase(name)}`} className="flex flex-col h-full">
+      <img alt={name} src={imageUrl} className="bg-contain w-full" />
+      <div className="p-4">
+        <h4 className="text-2xl leading-snug my-2">
           {name}
         </h4>
-        <h5 className={`${utilStyles.headingMd} ${styles.headingCompany}`}>
+        <h5 className="text-xl leading-normal text-[#bababa] m-0">
           {company}
         </h5>
         <p>{description}</p>

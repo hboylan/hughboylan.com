@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import 'normalize.css'
 import '../styles/globals.css'
 import Layout, { name } from '../components/layout'
 

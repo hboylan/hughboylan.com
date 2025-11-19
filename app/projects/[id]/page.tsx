@@ -1,6 +1,4 @@
-import cardStyles from '../../../components/projectCard.module.css'
-import { toKebabCase } from '../../../scripts/case'
-import utilStyles from '../../../styles/utils.module.css'
+import { toKebabCase } from '../../../utils/case'
 import { projects } from '../../page'
 
 export function generateStaticParams() {
@@ -22,20 +20,12 @@ export default async function Project({ params }: { params: Promise<{ id: string
       <img
         src={project.imageUrl}
         alt={project.name}
-        style={{
-          width: '100%',
-          maxWidth: '600px',
-          display: 'block',
-          margin: '0 auto 2rem',
-          borderRadius: '0.75rem',
-          boxShadow:
-            '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        }}
+        className="w-full max-w-2xl block mx-auto mb-8 rounded-xl shadow-md"
       />
-      <h2 className={`${utilStyles.headingLg} ${cardStyles.headingProject}`}>
+      <h2 className="text-2xl leading-snug my-2">
         {project.name}
       </h2>
-      <h3 className={`${utilStyles.headingMd} ${cardStyles.headingCompany}`}>
+      <h3 className="text-xl leading-normal text-[#bababa]">
         {project.company}
       </h3>
       <p>{project.description}</p>
