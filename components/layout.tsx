@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -14,18 +15,24 @@ export default function Layout({ children }) {
         <header className="flex flex-col items-center">
           {isHome ? (
             <>
-              <img
+              <Image
                 src="/images/profile.jpg"
+                width={128}
+                height={128}
                 className="w-32 h-32 rounded-full"
                 alt={name}
               />
-              <h1 className="text-5xl leading-tight font-extrabold tracking-tight my-4">{name}</h1>
+              <h1 className="text-5xl leading-tight font-extrabold tracking-tight my-4">
+                {name}
+              </h1>
             </>
           ) : (
             <>
               <Link href="/">
-                <img
+                <Image
                   src="/images/profile.jpg"
+                  width={96}
+                  height={96}
                   className="w-24 h-24 rounded-full"
                   alt={name}
                 />
