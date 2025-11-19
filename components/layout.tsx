@@ -1,24 +1,18 @@
-import Head from 'next/head'
+'use client'
+
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import utilStyles from '../styles/utils.module.css'
 import styles from './layout.module.css'
 
 export const name = 'Hugh Boylan'
 
 export default function Layout({ children }) {
-  const { pathname } = useRouter()
+  const pathname = usePathname()
   const isHome = pathname === '/'
   return (
     <>
       <div className={styles.container}>
-        <Head>
-          <link rel="icon" href="/favicon.ico" />
-          <meta name="description" content="Software engineer" />
-          <meta property="og:image" content={`/images/profile.jpg`} />
-          <meta name="og:title" content={name} />
-          <title>Hugh Boylan | Software Engineer</title>
-        </Head>
         <header className={styles.header}>
           {isHome ? (
             <>

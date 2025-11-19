@@ -1,4 +1,3 @@
-import Layout from '../components/layout'
 import { ProjectCard, type ProjectCardProps } from '../components/projectCard'
 import styles from '../styles/Home.module.css'
 import utilStyles from '../styles/utils.module.css'
@@ -50,7 +49,7 @@ export const projects: ProjectCardProps[] = [
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <section className={`${utilStyles.headingMd} ${styles.sectionContainer}`}>
         <p className={styles.intro}>
           Hi, I'm a software engineer with 10+ years of experience working on
@@ -67,6 +66,6 @@ export default function Home() {
           </ul>
         </section>
       </div>
-    </Layout>
+    </>
   )
 }
