@@ -1,8 +1,8 @@
-import React from 'react'
-import styles from './projectCard.module.css'
+import Link from 'next/link'
+import type React from 'react'
 import { toKebabCase } from '../scripts/case'
 import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import styles from './projectCard.module.css'
 
 export interface ProjectCardProps {
   company: string
@@ -19,18 +19,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => (
   <li className={styles.projectCard}>
     <Link href={`/projects/${toKebabCase(name)}`}>
-      <a>
-        <img alt={name} src={imageUrl} />
-        <div className={styles.projectContent}>
-          <h4 className={utilStyles.headingLg + ' ' + styles.headingProject}>
-            {name}
-          </h4>
-          <h5 className={utilStyles.headingMd + ' ' + styles.headingCompany}>
-            {company}
-          </h5>
-          <p>{description}</p>
-        </div>
-      </a>
+      <img alt={name} src={imageUrl} />
+      <div className={styles.projectContent}>
+        <h4 className={`${utilStyles.headingLg} ${styles.headingProject}`}>
+          {name}
+        </h4>
+        <h5 className={`${utilStyles.headingMd} ${styles.headingCompany}`}>
+          {company}
+        </h5>
+        <p>{description}</p>
+      </div>
     </Link>
   </li>
 )
