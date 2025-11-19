@@ -7,6 +7,8 @@ export function generateStaticParams() {
     id: toKebabCase(name),
   }))
 }
+ 
+export const dynamicParams = false
 
 export default async function Project({
   params,
