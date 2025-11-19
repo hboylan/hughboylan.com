@@ -21,6 +21,7 @@
 .projectCard > a {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .projectCard img {
