@@ -55,7 +55,7 @@ export default function About() {
                     </div>
                     <div className="flex items-center gap-3 text-slate-300">
                       <Award className="w-5 h-5 text-primary-400" />
-                      <span>8+ Years Experience</span>
+                      <span>15+ Years Experience</span>
                     </div>
                   </div>
                 </div>
@@ -73,7 +73,7 @@ export default function About() {
                 Full-Stack application developer and cloud architect with more
                 than{' '}
                 <span className="text-primary-400 font-semibold">
-                  8 years of experience
+                  15 years of experience
                 </span>{' '}
                 delivering quality web and mobile solutions to clients ranging
                 from startup to enterprise and government.

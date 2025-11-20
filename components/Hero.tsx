@@ -2,13 +2,22 @@
 
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { useRef } from 'react'
+import { useParticles } from '../hooks/useParticles'
 
 export default function Hero() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  useParticles(canvasRef)
+
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 pointer-events-none"
+      />
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
