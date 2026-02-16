@@ -23,7 +23,7 @@ interface UseParticlesOptions {
 
 export function useParticles(
   canvasRef: React.RefObject<HTMLCanvasElement | null>,
-  options: UseParticlesOptions = {}
+  options: UseParticlesOptions = {},
 ) {
   const {
     particleCount = 100,
@@ -101,8 +101,10 @@ export function useParticles(
             } else {
               // If inside buffer, gently push away or drift
               const force = (bufferRadius - distance) / bufferRadius
-              const directionX = -forceDirectionX * force * (particle.density * 0.5)
-              const directionY = -forceDirectionY * force * (particle.density * 0.5)
+              const directionX =
+                -forceDirectionX * force * (particle.density * 0.5)
+              const directionY =
+                -forceDirectionY * force * (particle.density * 0.5)
               particle.x += directionX
               particle.y += directionY
             }
@@ -128,8 +130,7 @@ export function useParticles(
 
       mouseRef.current = { x, y }
       isMouseInRef.current =
-        x >= 0 && x <= rect.width &&
-        y >= 0 && y <= rect.height
+        x >= 0 && x <= rect.width && y >= 0 && y <= rect.height
     }
 
     handleResize()
